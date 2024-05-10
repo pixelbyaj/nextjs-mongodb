@@ -17,11 +17,6 @@ Execute below command to start:
 docker compose up -d 
 ```
 
-Execute below to stop:
-```cmd
-docker compose down
-```
-
 This will setup and start mongodb server and mongodb-express:
 
 Open mongo-express on [http://localhost:8081](http://localhost:8081)
