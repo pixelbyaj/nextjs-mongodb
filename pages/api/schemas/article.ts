@@ -1,15 +1,4 @@
-import mongoose, { Schema, Document } from "mongoose";
-
-mongoose.connect(process.env.MONGODB_URI as string);
-
-mongoose.connection.on('connected', () => {
-    console.log('Connected to MongoDB');
-});
-
-mongoose.connection.on("error", (err) => {
-    console.log('Error connecting to MongoDB', err);
-});
-
+import mongoose, { Schema, Document } from 'mongoose';
 
 // Define the Article interface for TypeScript
 export interface IArticle extends Document {
@@ -19,7 +8,7 @@ export interface IArticle extends Document {
 }
 
 // Define the Article schema
-const articleSchema = new Schema<IArticle>({
+export const articleSchema = new Schema<IArticle>({
     title: {
         type: String,
         required: true,

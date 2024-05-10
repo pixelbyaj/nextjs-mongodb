@@ -1,6 +1,6 @@
-import * as mongoose from 'mongoose';
+import mongoose, { Schema, Document } from 'mongoose';
 
-export interface IUser extends mongoose.Document {
+export interface IUser extends Document {
     title: string;
     username: string;
     email: string;
@@ -15,12 +15,10 @@ export interface IUser extends mongoose.Document {
     contactno: string[];
     socialprofiles: { facebook: string, twitter: string, instagram: string }
 }
+
 class User {
     private readonly userProfileSchema: mongoose.Schema;
     private COLLECTION = "Users";
-    /**
-     *
-     */
     constructor() {
         this.userProfileSchema = new mongoose.Schema({
             title: {
