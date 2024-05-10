@@ -1,0 +1,52 @@
+{
+  "name": "learning-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 5000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "server:build": "tsc -w ./server"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.1.1",
+    "async": "^3.2.5",
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.20.1",
+    "clsx": "^2.0.0",
+    "compression": "^1.7.4",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "lusca": "^1.7.0",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "next": "14.0.4",
+    "passport": "^0.7.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.5",
+    "@types/express": "^4.17.21",
+    "@types/express-flash": "^0.0.5",
+    "@types/express-session": "^1.17.10",
+    "@types/lusca": "^1.7.4",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20",
+    "@types/passport": "^1.0.16",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "daisyui": "^4.4.20",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.3.3"
+  }
+}
