@@ -1,25 +1,15 @@
-import mongoose, { Document, Schema } from 'mongoose';
 import type { NextApiRequest, NextApiResponse } from 'next'
-import Magazine, { IMagazine } from './magazine';
+import Article, {IArticle} from './article';
 
 type ResponseData = {
-    message: IMagazine[] | null;
+    message: IArticle[] | null;
 }
-
-mongoose.connect(process.env.MONGODB_URI as string);
-mongoose.connection.on('connected', () => {
-    console.log('Connected to MongoDB');
-})
-mongoose.connection.on("error", (err) => {
-    console.log(err);
-});
-
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<ResponseData>
 ) {
     try {
-        const data = await Magazine.find({});
+        const data = await Article.find({});
         res.status(200).json({ message: data });
     } catch (error) {
         console.error(error);

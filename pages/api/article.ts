@@ -1,10 +1,21 @@
 import mongoose, { Schema, Document } from "mongoose";
 
+mongoose.connect(process.env.MONGODB_URI as string);
+
+mongoose.connection.on('connected', () => {
+    console.log('Connected to MongoDB');
+});
+
+mongoose.connection.on("error", (err) => {
+    console.log('Error connecting to MongoDB', err);
+});
+
+
 // Define the Article interface for TypeScript
-interface IArticle extends Document {
+export interface IArticle extends Document {
     title: string;
     text: string;
-    image?: string[];
+    images?: string[];
 }
 
 // Define the Article schema
@@ -17,7 +28,7 @@ const articleSchema = new Schema<IArticle>({
         type: String,
         required: true,
     },
-    image: [{
+    images: [{
         type: String,
     }],
 });
