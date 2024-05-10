@@ -18,7 +18,7 @@ export interface IUser extends Document {
 
 class User {
     private readonly userProfileSchema: mongoose.Schema;
-    private COLLECTION = "Users";
+    private COLLECTION:string = "Users";
     constructor() {
         this.userProfileSchema = new mongoose.Schema({
             title: {

@@ -1,10 +1,42 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Prerequisite
+
+* Latest Node.js
+* Docker
+
 ## Getting Started
 
-First, run the development server:
+* [Install Docker](https://docs.docker.com/desktop/install/windows-install/)
+
+### configure mongodb
+
+Execute below command to start:
+
+```cmd
+docker compose up -d 
+```
+
+Execute below to stop:
+```cmd
+docker compose down
+```
+
+This will setup and start mongodb server and mongodb-express:
+
+Open mongo-express on [http://localhost:8081](http://localhost:8081)
+
+Test the connection using executing mong-test.js
+
+```cmd
+node .\mongo-test.js
+```
+
+To run the Next.js app development server:
 
 ```bash
+npm install
+
 npm run dev
 # or
 yarn dev
@@ -14,11 +46,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Open [http://localhost:5000](http://localhost:5000) with your browser to see the result.
 
 ## Learn More
 
